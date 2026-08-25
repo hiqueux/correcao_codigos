@@ -1,5 +1,7 @@
 <?php
 
+require_once '../infra/conexao.php';
+
 if (isset($_POST['editar'])) {
 
     $id = $_POST['id'];

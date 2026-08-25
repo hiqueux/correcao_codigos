@@ -1,5 +1,7 @@
 <?php
 
+require_once '../infra/conexao.php';
+
 if (isset($_GET['excluir'])) {
 
     $id = $_GET['excluir'];

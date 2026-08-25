@@ -1,5 +1,8 @@
 <?php
 
+require_once '../infra/conexao.php';
+
+
 if (isset($_POST['cadastrar'])) {
 
     $nome = $_POST['nome'];
