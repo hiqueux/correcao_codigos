@@ -1,10 +1,14 @@
+<?php
+
+require_once '../infra/conexao.php';
+
 $sql = "SELECT id, nome, email FROM usuarios ORDER BY id DESC";
 $resultado = $conn->query($sql)
 
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +19,7 @@ $resultado = $conn->query($sql)
 
     <h1>Cadastro de Usuários</h1>
 
-    <form method="POST">
+    <form action="cadastrar.php" method="POST">
 
         <label>Nome:</label>
         <input type="text" name="nome" required>
@@ -62,7 +66,11 @@ $resultado = $conn->query($sql)
 
                 <td>
 
-                    <a href="index.php?excluir=<?= $usuario['id'] ?>">
+                    <a href="editar.php?id=<?= $usuario['id'] ?>">
+                        Editar
+                    </a>
+                    
+                    <a href="excluir.php?id=<?= $usuario['id'] ?>">
                         Excluir
                     </a>
 
